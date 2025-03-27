@@ -10,7 +10,6 @@ This is a **Spring Boot + MySQL** project for managing books in a digital librar
 -  MySQL Database Integration
 -  REST API with Spring Boot
 -  API Testing using Postman
--  Easy Deployment on Railway.app
 -  Secure API with Exception Handling
 
 ---
@@ -19,7 +18,7 @@ This is a **Spring Boot + MySQL** project for managing books in a digital librar
 - **Database:** MySQL
 - **Build Tool:** Maven
 - **Version Control:** Git & GitHub
-- **Deployment:** Railway.app
+  
 
 ---
 ## **Prerequisites**
@@ -101,7 +100,7 @@ spring.application.name=DigitalLibraryBookManagementSystem
 
 ---
 
-## SQL_Schema ##
+## SQL Database Schema ##
 
 ```sql
 CREATE TABLE books (
@@ -147,7 +146,19 @@ INSERT INTO users (username, password) VALUES
 |  1 | john_doe   | securepassword  |
 |  2 | alice_smith| mypassword123   |
 
+---
 
+## **Challenges Faced:**
+- Ensuring smooth integration between **Spring Boot and MySQL**.
+- Managing **database migrations and schema updates** efficiently.
+- Handling **exception cases** for API requests.
+- Implementing **secure user authentication** without using third-party libraries.
+- Optimizing **CRUD operations** for performance and scalability.
 
-
+## **Potential Improvements:**  
+- Implement **password hashing** using **BCrypt** for secure password storage.  
+- Use **JWT-based authentication** to secure API endpoints.  
+- Add **pagination, sorting, and filtering** for efficient data retrieval.  
+- Develop a **React or Angular frontend** for better user experience.  
+- Expand **unit and integration testing** to ensure system reliability.
 
