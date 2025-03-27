@@ -95,6 +95,59 @@ spring.application.name=DigitalLibraryBookManagementSystem
 ### **User Management**
 |  Method   |     Endpoint     |  Description         |
 |-----------|------------------|----------------------|
-| `john_doe`| `/users/register`| Register a new user  |
+| `POST`    | `/users/register`| Register a new user  |
 
 #### EX:- localhost:8080/users/register
+
+---
+
+## SQL_Schema ##
+
+```sql
+CREATE TABLE books (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    author VARCHAR(255) NOT NULL,
+    category VARCHAR(100) NOT NULL,
+    availability BOOLEAN NOT NULL DEFAULT TRUE
+);
+
+CREATE TABLE users (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
+INSERT INTO books (title, author, category, availability) VALUES
+('The Great Gatsby', 'F. Scott Fitzgerald', 'Fiction', TRUE),
+('To Kill a Mockingbird', 'Harper Lee', 'Fiction', TRUE),
+('1984', 'George Orwell', 'Dystopian', TRUE),
+('The Catcher in the Rye', 'J.D. Salinger', 'Classic', TRUE),
+('Moby-Dick', 'Herman Melville', 'Adventure', TRUE);
+
+INSERT INTO users (username, password) VALUES
+('john_doe', 'securepassword'),
+('alice_smith', 'mypassword123');
+```
+
+### Sample Data Representation
+
+#### Books Table
+| ID | Title                | Author               | Category   | Availability |
+|----|----------------------|----------------------|------------|--------------|
+|  1 | The Great Gatsby     | F. Scott Fitzgerald  | Fiction    | TRUE         |
+|  2 | To Kill a Mockingbird| Harper Lee           | Fiction    | TRUE         |
+|  3 | 1984                 | George Orwell        | Dystopian  | TRUE         |
+|  4 | The Catcher in the Rye | J.D. Salinger      | Classic    | TRUE         |
+|  5 | Moby-Dick            | Herman Melville      | Adventure  | TRUE         |
+
+#### Users Table
+| ID | Username   | Password        |
+|----|------------|-----------------|
+|  1 | john_doe   | securepassword  |
+|  2 | alice_smith| mypassword123   |
+
+
+
+
+
